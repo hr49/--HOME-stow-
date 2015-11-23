@@ -20,3 +20,11 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+NVIM_TUI_ENABLE_TRUE_COLOR=1
+export NVIM_TUI_ENABLE_TRUE_COLOR
+
+LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
+export PKG_CONFIG_PATH

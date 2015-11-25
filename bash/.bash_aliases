@@ -1,4 +1,4 @@
-alias fd="ls -C"
+alias fd="ls -Cv"
 alias f="fd -A"
-alias df="ls -l --time-style +\"%F %T%:z\""
+alias df="ls -lv --time-style +\"%F %T%:z\""
 alias d="df -A"

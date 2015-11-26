@@ -74,16 +74,16 @@ xn $ g$
 xn k gk
 xn j gj
 
-if empty(glob('~/.nvim/autoload/plug.vim'))
-        !curl --create-dirs -fLo ~/.nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+        !curl --create-dirs -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 en
 
-cal plug#begin()
+cal plug#begin('~/.nvim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'morhetz/gruvbox'
 cal plug#end()
 
 se bg=dark
 let g:gruvbox_italic=1
-sil colo gruvbox
+sil! colo gruvbox
 sy enable

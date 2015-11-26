@@ -78,8 +78,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         !curl --create-dirs -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 en
 
-cal plug#begin('~/.nvim/plugged')
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+cal plug#begin('~/.config/nvim/plugged')
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'morhetz/gruvbox'
 cal plug#end()
 

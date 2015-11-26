@@ -29,5 +29,5 @@ fi
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
+export LD_LIBRARY_PATH="$HOME/apertium/lib:${LD_LIBRARY_PATH}"
+export PKG_CONFIG_PATH="$HOME/apertium/lib/pkgconfig:${PKG_CONFIG_PATH}"

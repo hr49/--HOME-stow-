@@ -83,11 +83,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'morhetz/gruvbox'
 cal plug#end()
 
-sil PlugUpgrade
-PlugInstall
-PlugUpdate
-
 se bg=dark
 let g:gruvbox_italic=1
-colo gruvbox
+sil colo gruvbox
 sy enable

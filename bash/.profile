@@ -24,7 +24,7 @@ fi
 export NO_AT_BRIDGE=1
 
 if [[ -d $HOME/neovim/bin ]]; then
-        $PATH="$HOME/neovim/bin:$PATH"
+        PATH="$HOME/neovim/bin:$PATH"
 fi
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1

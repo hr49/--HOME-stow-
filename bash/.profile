@@ -24,7 +24,7 @@ fi
 export NO_AT_BRIDGE=1
 
 if [ -d "$HOME/neovim/bin" ]; then
-    PATH="$HOME/neovim/bin:$PATH"
+    PATH="$HOME/install/nvim/bin:$PATH"
 fi
 
 export LD_LIBRARY_PATH="$HOME/install/apertium/lib:${LD_LIBRARY_PATH}"

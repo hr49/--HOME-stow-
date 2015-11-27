@@ -29,6 +29,9 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;at" type="string" value="gnome-terminal --geometry 146x13+0+23 -x title.sh ssh -t pi@192.168.1.115 screen -r"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;numbersign" type="string" value="gnome-terminal --geometry 80x48+1176+23"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;dollar" type="string" value="gnome-terminal --geometry 146x48+0+23 -x title.sh nvim"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;4" type="string" value="idle"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;5" type="string" value="idle3"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

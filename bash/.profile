@@ -27,5 +27,5 @@ if [ -d "$HOME/neovim/bin" ]; then
     PATH="$HOME/neovim/bin:$PATH"
 fi
 
-export LD_LIBRARY_PATH="$HOME/apertium/lib:${LD_LIBRARY_PATH}"
-export PKG_CONFIG_PATH="$HOME/apertium/lib/pkgconfig:${PKG_CONFIG_PATH}"
+export LD_LIBRARY_PATH="$HOME/install/apertium/lib:${LD_LIBRARY_PATH}"
+export PKG_CONFIG_PATH="$HOME/install/apertium/lib/pkgconfig:${PKG_CONFIG_PATH}"

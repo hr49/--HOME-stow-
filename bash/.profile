@@ -23,6 +23,12 @@ fi
 
 export NO_AT_BRIDGE=1
 
+if [ -d "$HOME/install/title/bin" ]; then
+    PATH="$HOME/install/title/bin:$PATH"
+fi
+
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 if [ -d "$HOME/install/nvim/bin" ]; then
     PATH="$HOME/install/nvim/bin:$PATH"
 fi

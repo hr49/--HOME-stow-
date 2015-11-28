@@ -23,7 +23,7 @@ fi
 
 export NO_AT_BRIDGE=1
 
-if [ -d "$HOME/neovim/bin" ]; then
+if [ -d "$HOME/install/nvim/bin" ]; then
     PATH="$HOME/install/nvim/bin:$PATH"
 fi
 

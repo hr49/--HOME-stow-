@@ -79,7 +79,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 en
 
 cal plug#begin('~/.config/nvim/plugged')
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'morhetz/gruvbox'
 cal plug#end()
 

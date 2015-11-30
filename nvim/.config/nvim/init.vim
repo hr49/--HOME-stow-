@@ -53,7 +53,7 @@ se nuw=11
 se rnu nu
 
 cno w!! w !sudo tee >/dev/null %
-nn <Leader><Space> :ls<CR>:b<Space>
+nn <Leader><Space> :ls<CR>:b
 se et
 let g:netrw_liststyle = 3
 se nosmd

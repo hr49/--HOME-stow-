@@ -1,8 +1,8 @@
 /* XPM */
 static char * top_right_active_xpm[] = {
 "3 38 2 1",
-" 	c #282828",
-".	c #7c6f64",
+" 	c #1883d7",
+".	c #ffffff",
 "   ",
 ".. ",
 ".. ",

@@ -1,11 +1,11 @@
-active_text_color=#282828
+active_text_color=#000000
 button_offset=0
 button_spacing=0
 full_width_title=true
-inactive_text_color=#A89984
+inactive_text_color=#999999
 shaddow_app_icon=false
-title_horizontal_offset=1
+title_horizontal_offset=0
 title_shaddow_active=false
 title_shaddow_inactive=false
-title_vertical_offset_active=5
-title_vertical_offset_inactive=5
+title_vertical_offset_active=0
+title_vertical_offset_inactive=0

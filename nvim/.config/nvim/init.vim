@@ -83,6 +83,11 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'morhetz/gruvbox'
 cal plug#end()
 
+let g:ycm_semantic_triggers = {
+                        \ 'c' : ['-> ', '. '],
+                        \ 'cpp' : ['-> ', '. ', ':: '],
+                        \ }
+
 se bg=dark
 let g:gruvbox_italic=1
 sil! colo gruvbox

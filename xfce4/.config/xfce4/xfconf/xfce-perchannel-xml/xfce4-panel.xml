@@ -5,13 +5,13 @@
   <property name="panels" type="array">
     <value type="int" value="1"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=0;x=1248;y=241"/>
+      <property name="position" type="string" value="p=0;x=70;y=240"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
       </property>
       <property name="position-locked" type="bool" value="true"/>
       <property name="length" type="uint" value="1"/>
-      <property name="size" type="uint" value="26"/>
+      <property name="size" type="uint" value="25"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="nrows" type="uint" value="1"/>
       <property name="mode" type="uint" value="0"/>

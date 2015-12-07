@@ -34,9 +34,13 @@ if [ -d "$HOME/install/nvim/bin" ]; then
 fi
 
 if [ -d "$HOME/install/apertium/lib" ]; then
-    export LD_LIBRARY_PATH="$HOME/install/apertium/lib:${LD_LIBRARY_PATH}"
+    LD_LIBRARY_PATH="$HOME/install/apertium/lib:${LD_LIBRARY_PATH}"
 fi
 
 if [ -d "$HOME/install/apertium/lib/pkgconfig" ]; then
-    export PKG_CONFIG_PATH="$HOME/install/apertium/lib/pkgconfig:${PKG_CONFIG_PATH}"
+    PKG_CONFIG_PATH="$HOME/install/apertium/lib/pkgconfig:${PKG_CONFIG_PATH}"
+fi
+
+if [ -d "$HOME/install/apertium/bin" ]; then
+    PATH="$HOME/install/apertium/bin:$PATH"
 fi

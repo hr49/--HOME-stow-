@@ -92,3 +92,7 @@ se bg=dark
 let g:gruvbox_italic=1
 sil! colo gruvbox
 sy enable
+
+nn <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
+ino <C-K> <C-O>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
+xno <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>

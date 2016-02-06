@@ -52,6 +52,8 @@ aug end
 se nuw=11
 se rnu nu
 
+se cc=81
+
 cno w!! w !sudo tee >/dev/null %
 nn <Leader><Space> :ls<CR>:b
 se et
@@ -74,6 +76,8 @@ xn $ g$
 xn k gk
 xn j gj
 
+se so=3
+
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
         !curl --create-dirs -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 en
@@ -83,13 +87,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'morhetz/gruvbox'
 cal plug#end()
 
-let g:ycm_semantic_triggers = {
-                        \ 'c' : ['-> ', '. '],
-                        \ 'cpp' : ['-> ', '. ', ':: '],
-                        \ }
-
 se bg=dark
-let g:gruvbox_italic=1
 sil! colo gruvbox
 sy enable
 

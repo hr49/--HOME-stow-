@@ -52,15 +52,13 @@ aug end
 se nuw=11
 se rnu nu
 
-se cc=81
-
 cno w!! w !sudo tee >/dev/null %
 nn <Leader><Space> :ls<CR>:b
 se et
 let g:netrw_liststyle = 3
 se nosmd
 
-se wrap lbr
+se wrap lbr bri
 nn 0 g0
 nn ^ g^
 nn $ g$

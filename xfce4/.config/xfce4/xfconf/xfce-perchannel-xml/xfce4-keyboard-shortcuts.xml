@@ -32,10 +32,10 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;h" type="string" value="xfce4-session-logout --halt"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;r" type="string" value="xfce4-session-logout --reboot"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;s" type="string" value="xfce4-session-logout --suspend"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;numbersign" type="string" value="gnome-terminal --geometry 80x55+808+176"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;at" type="string" value="gnome-terminal --geometry 116x9+0+0 -x title.sh ssh -t pi@192.168.1.115 screen -r"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;percent" type="string" value="gnome-terminal --geometry 116x9+0+0 -x title.sh weechat-curses"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;dollar" type="string" value="gnome-terminal --geometry 100x55+0+176 -x title.sh nvim"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;dollar" type="string" value="gnome-terminal --geometry 100x55+8+168 -x title.sh nvim"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;at" type="string" value="gnome-terminal --geometry 116x9+8+0 -x title.sh ssh -t pi@192.168.1.115 screen -r"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;percent" type="string" value="gnome-terminal --geometry 116x9+8+0 -x title.sh weechat-curses"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;numbersign" type="string" value="gnome-terminal --geometry 80x55+816+168"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

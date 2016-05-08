@@ -21,7 +21,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-for d in title nvim lttoolbox apertium corevoikko; do
+for d in title nvim apertium voikko; do
     d="$HOME/install/$d/bin"
 
     if [ -d "$d" ]; then
@@ -29,7 +29,7 @@ for d in title nvim lttoolbox apertium corevoikko; do
     fi
 done
 
-for LD_LIBRARY_d in apertium corevoikko; do
+for LD_LIBRARY_d in apertium voikko; do
     LD_LIBRARY_d="$HOME/install/$LD_LIBRARY_d/lib"
 
     if [ -d "$LD_LIBRARY_d" ]; then
@@ -39,7 +39,7 @@ done
 
 export LD_LIBRARY_PATH
 
-for PKG_CONFIG_d in apertium corevoikko; do
+for PKG_CONFIG_d in apertium voikko; do
     PKG_CONFIG_d="$HOME/install/$PKG_CONFIG_d/lib/pkgconfig"
 
     if [ -d "$PKG_CONFIG_d" ]; then

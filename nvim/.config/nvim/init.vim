@@ -81,7 +81,7 @@ ino <C-K> <C-O>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 xno <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-        !curl --create-dirs -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        sil !curl --create-dirs -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 en
 
 cal plug#begin('~/.config/nvim/plugged')

@@ -49,7 +49,7 @@ aug i_nornu
         au InsertEnter * setl nornu
         au InsertLeave * setl rnu
 aug end
-se nuw=11
+se nuw=10
 se rnu nu
 
 cno w!! w !sudo tee >/dev/null %

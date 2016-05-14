@@ -49,7 +49,7 @@ aug i_nornu
         au InsertEnter * setl nornu
         au InsertLeave * setl rnu
 aug end
-se nuw=10
+se nuw=11
 se rnu nu
 
 cno w!! w !sudo tee >/dev/null %
@@ -83,6 +83,11 @@ xno <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
         sil !curl --create-dirs -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 en
+
+fu! s:S_Plug_Valloric_YouCompleteMe_do(info)
+        if a:info.status == 'installed' || a:info.force
+        en
+endf
 
 cal plug#begin('~/.config/nvim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }

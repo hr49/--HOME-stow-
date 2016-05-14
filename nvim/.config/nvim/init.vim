@@ -90,7 +90,7 @@ fu! s:S_Plug_Valloric_YouCompleteMe_do(info)
 endf
 
 cal plug#begin('~/.config/nvim/plugged')
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'PATH="/sbin:${PATH}" ./install.py --clang-completer' }
 Plug 'morhetz/gruvbox'
 cal plug#end()
 

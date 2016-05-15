@@ -84,11 +84,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         sil !curl --create-dirs -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 en
 
-fu! s:S_Plug_Valloric_YouCompleteMe_do(info)
-        if a:info.status == 'installed' || a:info.force
-        en
-endf
-
 cal plug#begin('~/.config/nvim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': 'PATH=\"/sbin:${PATH}\" ./install.py --clang-completer' }
 Plug 'morhetz/gruvbox'

@@ -92,3 +92,5 @@ cal plug#end()
 se bg=dark
 sil! colo gruvbox
 sy enable
+
+let g:ycm_python_binary_path = '/usr/bin/python2.7'

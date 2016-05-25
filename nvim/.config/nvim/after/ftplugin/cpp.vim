@@ -1,4 +1,3 @@
-setl cc=81
 setl nobri
 
 setl tw=79

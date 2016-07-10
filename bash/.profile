@@ -21,7 +21,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-for d in title nvim apertium clang-format vim voikko; do
+for d in title apertium clang-format vim voikko; do
     d="$HOME/install/$d/bin"
 
     if [ -d "$d" ]; then

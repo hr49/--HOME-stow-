@@ -134,10 +134,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 en
 
 cal plug#begin('~/.vim/plugged')
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'morhetz/gruvbox'
 Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install' }
 Plug 'Valloric/YouCompleteMe', { 'do': 'PATH=\"/sbin:${PATH}\" ./install.py --clang-completer' }
-Plug 'morhetz/gruvbox'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 cal plug#end()
 
 se bg=dark

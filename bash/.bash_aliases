@@ -1,0 +1,5 @@
+alias ls='ls -v'
+alias kd='ls -C'
+alias d='kd -A'
+alias dk='ls -l --time-style +"%F %T%:z"'
+alias k='dk -A'

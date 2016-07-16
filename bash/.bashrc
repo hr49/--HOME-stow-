@@ -115,3 +115,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+case $TERM in
+        xterm*)
+                PS1="\[\033]0;\u@\h:\w\007\]\u@\h:\w\n$ "
+                ;;
+        *)
+                PS1="\u@\h:\w\n$ "
+                ;;
+esac

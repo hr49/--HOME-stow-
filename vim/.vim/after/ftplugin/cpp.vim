@@ -1,6 +1,6 @@
 setl nobri
 
-setl tw=80
+setl tw=79
 setl fo=croq
 
 setl sw=2

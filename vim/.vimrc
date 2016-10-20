@@ -33,7 +33,7 @@ fu! S_stl_mod()
         en
         retu ' '
 endf
-se stl=\ \ \ %-10.10c\ %-3.3{S_stl_mode()}\ %-1.1{S_stl_mod()}\ %-{expand('%:p:~:.')}
+se stl=\ \ %-10.10c\ %-3.3{S_stl_mode()}\ %-1.1{S_stl_mod()}\ %-{expand('%:p:~:.')}%=%{fugitive#statusline()}
 se ls=2
 
 fu! S_sig_place()
@@ -66,25 +66,7 @@ se is
 se hls
 se nosmd
 
-aug hr
-        au!
-        au FileType cpp,java ino <C-Z> <C-O>:exe "norm" &tw - col(".") . "a-\<lt>Esc>"<CR>
-aug end
-
 se fdm=marker
-
-aug java_access_mode
-        au!
-        au FileType java nm <C-Q>1 m'O// public: {{{ <lt>editor-fold defaultstate="collapsed" desc="public:"><Esc>jo// }}} <lt>/editor-fold><Esc>''
-        au FileType java im <C-Q>1 <Esc>O// public: {{{ <lt>editor-fold defaultstate="collapsed" desc="public:"><Esc>jo// }}} <lt>/editor-fold><Esc>kA
-        au FileType java xm <C-Q>1 <Esc>'<V'>c// public: {{{ <lt>editor-fold defaultstate="collapsed" desc="public:"><CR>}}} <lt>/editor-fold><Esc>P
-        au FileType java nm <C-Q>2 m'O// protected: {{{ <lt>editor-fold defaultstate="collapsed" desc="protected:"><Esc>jo// }}} <lt>/editor-fold><Esc>''
-        au FileType java im <C-Q>2 <Esc>O// protected: {{{ <lt>editor-fold defaultstate="collapsed" desc="protected:"><Esc>jo// }}} <lt>/editor-fold><Esc>kA
-        au FileType java xm <C-Q>2 <Esc>'<V'>c// protected: {{{ <lt>editor-fold defaultstate="collapsed" desc="protected:"><CR>}}} <lt>/editor-fold><Esc>P
-        au FileType java nm <C-Q>3 m'O// private: {{{ <lt>editor-fold defaultstate="collapsed" desc="private:"><Esc>jo// }}} <lt>/editor-fold><Esc>''
-        au FileType java im <C-Q>3 <Esc>O// private: {{{ <lt>editor-fold defaultstate="collapsed" desc="private:"><Esc>jo// }}} <lt>/editor-fold><Esc>kA
-        au FileType java xm <C-Q>3 <Esc>'<V'>c// private: {{{ <lt>editor-fold defaultstate="collapsed" desc="private:"><CR>}}} <lt>/editor-fold><Esc>P
-aug end
 
 se wrap lbr bri
 nn 0 g0
@@ -114,19 +96,6 @@ xn gj j
 
 se so=3
 
-aug ClangFormat
-        au!
-        au FileType cpp,java nn <C-P> m'O// clang-format off<Esc>jo// clang-format on<Esc>''
-        au FileType cpp,java ino <C-P> <Esc>O// clang-format off<Esc>jo// clang-format on<Esc>kA
-        au FileType cpp,java xn <C-P> <Esc>'<V'>c// clang-format off<CR>clang-format on<Esc>P
-        au FileType cpp,java nn <C-N> m'O// clang-format on<Esc>jo// clang-format off<Esc>''
-        au FileType cpp,java ino <C-N> <Esc>O// clang-format on<Esc>jo// clang-format off<Esc>kA
-        au FileType cpp,java xn <C-N> <Esc>'<V'>c// clang-format on<CR>clang-format off<Esc>P
-        au FileType cpp,java nn <C-J> :pyf /home/matthew/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/share/clang/clang-format.py<CR>
-        au FileType cpp,java ino <C-J> <C-O>:pyf /home/matthew/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/share/clang/clang-format.py<CR>
-        au FileType cpp,java xn <C-J> :pyf /home/matthew/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/share/clang/clang-format.py<CR>
-aug end
-
 let g:EclimCompletionMethod = 'omnifunc'
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -135,6 +104,9 @@ en
 
 cal plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install' }
 Plug 'Valloric/YouCompleteMe', { 'do': 'PATH=\"/sbin:${PATH}\" ./install.py --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -146,3 +118,13 @@ se go=M
 sy enable
 
 let g:ycm_python_binary_path = '/usr/bin/python2.7'
+
+nn <C-P> m'O// clang-format off<Esc>jo// clang-format on<Esc>''
+ino <C-P> <Esc>O// clang-format off<Esc>jo// clang-format on<Esc>kA
+xn <C-P> <Esc>'<V'>c// clang-format off<CR>clang-format on<Esc>P
+nn <C-N> m'O// clang-format on<Esc>jo// clang-format off<Esc>''
+ino <C-N> <Esc>O// clang-format on<Esc>jo// clang-format off<Esc>kA
+xn <C-N> <Esc>'<V'>c// clang-format on<CR>clang-format off<Esc>P
+nn <C-J> :pyf /home/matthew/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/share/clang/clang-format.py<CR>
+ino <C-J> <C-O>:pyf /home/matthew/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/share/clang/clang-format.py<CR>
+xn <C-J> :pyf /home/matthew/clang+llvm-3.8.0-x86_64-linux-gnu-debian8/share/clang/clang-format.py<CR>

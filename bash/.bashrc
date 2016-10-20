@@ -124,3 +124,5 @@ case $TERM in
                 PS1="\u@\h:\w\n$ "
                 ;;
 esac
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

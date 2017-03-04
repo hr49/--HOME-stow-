@@ -74,11 +74,12 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;4" type="string" value="idle"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;exclam" type="string" value="xfce4-terminal"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;dollar" type="string" value="gvim -geometry 93x55+7+167"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;parenright" type="string" value="gvim -geometry 93x30+1163+425"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;at" type="string" value="xfce4-terminal --geometry 80x24+1268+10 -x zsh"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;parenleft" type="string" value="gvim -geometry 93x30+403+425"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;numbersign" type="string" value="xfce4-terminal --geometry 80x24+508+10 -x zsh"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;dollar" type="string" value="xfce4-terminal --geometry 80x24+1268+426 -x zsh"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;percent" type="string" value="xfce4-terminal --geometry 80x24+508+426 -x zsh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

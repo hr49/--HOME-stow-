@@ -1,4 +1,4 @@
-#!/bin/sh
-logger.sh apt-get -q update
-logger.sh apt-get -q dist-upgrade
-logger.sh apt-get -q --purge autoremove
+#!/bin/bash
+terminal-logger apt-get -q update
+terminal-logger apt-get -q dist-upgrade
+terminal-logger apt-get -q --purge autoremove

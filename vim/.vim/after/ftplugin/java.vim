@@ -1,22 +1,21 @@
-setl nowrap nolbr nobri
+setlocal formatoptions=croq
 
-setl tw=80
-setl fo=croq
+setlocal tabstop=2
 
-setl sw=2
-setl cino=L0,l1,+2s,(0,W4,j1
-setl cin
+" ``When zero the 'ts' value will be used."
+setlocal shiftwidth=0
 
-setl ts=2
+setlocal cinoptions=L0,l1,+2s,(0,W4,j1
+setlocal cindent
 
 ino <C-Z> <C-O>:exe "norm" &tw - col(".") . "a-"<CR>
 
-fu! S_foldtext()
-        retu substitute(getline(v:foldstart),'^\(\%(  \)*\)\/\/ <editor-fold defaultstate="collapsed" desc="\([^"]*\)">$','+  \1\2 ', '')
-endf
+function! Java_foldtext()
+        return substitute(getline(v:foldstart), '^\(\%(  \)*\)\/\/ <editor-fold defaultstate="collapsed" desc="\([^"]*\)">$', '+  \1\2 ', '')
+endfunction
 
-setl fdt=S_foldtext()
-setl fmr=<editor-fold\ ,</editor-fold>
+setlocal fdt=Java_foldtext()
+setlocal fmr=<editor-fold\ ,</editor-fold>
 
 nm <C-Q>1 m'O// <lt>editor-fold defaultstate="collapsed" desc="public"><Esc>jo// <lt>/editor-fold><Esc>''
 im <C-Q>1 <Esc>O// <lt>editor-fold defaultstate="collapsed" desc="public"><Esc>jo// <lt>/editor-fold><Esc>kA

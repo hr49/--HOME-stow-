@@ -1,3 +1,5 @@
+set nocompatible
+
 set lazyredraw
 
 set encoding=utf-8
@@ -59,9 +61,9 @@ let s:mode_text = {'v': 'v', 'V': 'V', '': '^V', 's': 'gh', 'S': 'gH', '': 'g^
 function! GetModeText()
         let l:mode = mode()
         if l:mode =~ 'n\|no\|t\|c\|cv\|ce\|r\|rm\|r?\|!'
-                return ' '
+                return ''
         endif
-        return g:mode_text[l:mode]
+        return s:mode_text[l:mode]
 endf
 
 " cf. below.
@@ -80,8 +82,8 @@ set statusline=\ \
 "
 "         set numberwidth=11
 "
-" will be executed, the width of the numbers themselves in the number column is
-" one less than 'numberwidth', and a space follows them before the buffer text.
+" was executed, the width of the numbers themselves in the number column is one
+" less than 'numberwidth', and a space follows them before the buffer text.
 " Therefore, a space likewise follows the cursor column number.
 set statusline+=%-10.10c\ 
 
@@ -117,9 +119,10 @@ set wildmode=list:longest
 nnoremap <Leader><Space> :ls<CR>:b
 
 " cf. <https://stackoverflow.com/a/7078429>.
-cno w!! w !sudo tee >/dev/null %
+cnoremap w!! w !sudo tee >/dev/null %
 
 set backspace=indent,eol,start
+set textwidth=79
 
 set incsearch
 set scrolloff=3

@@ -1,10 +1,9 @@
-setl nobri
+setlocal formatoptions=croq
 
-setl tw=79
-setl fo=croq
+setlocal tabstop=2
 
-setl sw=2
-setl cino=:0,l1,g0,N-s,+2s,(0,W4
-setl cin
+" ``When zero the 'ts' value will be used."
+setlocal shiftwidth=0
 
-setl ts=2
+setlocal cinoptions=:0,l1,g0,N-s,+2s,(0,W4
+setlocal cindent

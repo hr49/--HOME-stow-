@@ -116,13 +116,36 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# cf. http://stackoverflow.com/a/1618602
+_PS1(){
+        local PROMPT="$USER@$HOSTNAME:"
+        local LENGTH="$["$(tput cols)" - "${#PROMPT}" - 1]"
+        local TAIL="${PWD#$HOME}"
+
+        # cf. "PROMPTING". To read this section, type
+        #
+        #         man bash
+        #
+        # and go to the third occurrence of "PROMPTING".
+        #
+        # ``\W     the basename of the current working directory, with $HOME
+        #          abbreviated with a tilde"
+        local W="$TAIL"
+
+        [[ "$W" != "$PWD" ]] && W="~$W"
+        local W_LENGTH="${#W}"
+
+        # "9" is the length of " [. . .] ".
+        (( "$W_LENGTH" > "$LENGTH" )) && TAIL="${PWD#$HOME}" TAIL="${TAIL#/}" W="${W%$TAIL} [. . .] ${TAIL:$["$W_LENGTH" - "$LENGTH" + 9]}"
+
+        echo "$PROMPT$W"
+}
+
 case $TERM in
         xterm*)
-                PS1="\[\033]0;\u@\h:\w\007\]\u@\h:\w\n$ "
+                PS1='\[\033]0;$(_PS1)\007\]$(_PS1)\n$ '
                 ;;
         *)
-                PS1="\u@\h:\w\n$ "
+                PS1='$(_PS1)\n$ '
                 ;;
 esac
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

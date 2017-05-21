@@ -21,9 +21,8 @@ echo "$0: You must use sudo to execute this program as the superuser"
 exit 1
 }
 
-##ARCHIVE="$1/$(date +%Y%m%dT%H%M%S%z).tar.xz"
-#cd "$1"
-#ARCHIVE="$(date +%Y%m%dT%H%M%S%z).tar.xz"  # "$1" may have a trailing "/".
+# Get a lock on the backup file in case another instance of this script is run
+# within the same second. Note that "$1" may have a trailing "/".
 exec 3> "${1%/}/$(date +'%Y%m%dT%H%M%S%z').tar.xz"
 
 SUDO_HOME="$(getent passwd $SUDO_USER|cut -d: -f6)"

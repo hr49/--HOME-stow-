@@ -118,9 +118,9 @@ fi
 
 # cf. http://stackoverflow.com/a/1618602
 _PS1(){
-        local PROMPT="$USER@$HOSTNAME:"
-        local LENGTH="$["$(tput cols)" - "${#PROMPT}" - 1]"
-        local TAIL="${PWD#$HOME}"
+        local PROMPT_HEAD="$USER@$HOSTNAME:"
+        local MAXIMUM_PROMPT_TAIL_LENGTH="$(($(tput cols) - ${#PROMPT_HEAD} - 1))"
+        local PROMPT_TAIL="${PWD#$HOME}"
 
         # cf. "PROMPTING". To read this section, type
         #
@@ -130,15 +130,20 @@ _PS1(){
         #
         # ``\W     the basename of the current working directory, with $HOME
         #          abbreviated with a tilde"
-        local W="$TAIL"
+        local W="$PROMPT_TAIL"
 
         [[ "$W" != "$PWD" ]] && W="~$W"
         local W_LENGTH="${#W}"
 
         # "9" is the length of " [. . .] ".
-        (( "$W_LENGTH" > "$LENGTH" )) && TAIL="${PWD#$HOME}" TAIL="${TAIL#/}" W="${W%$TAIL} [. . .] ${TAIL:$["$W_LENGTH" - "$LENGTH" + 9]}"
+        if (( $W_LENGTH > $MAXIMUM_PROMPT_TAIL_LENGTH ))
+        then
+                PROMPT_TAIL="${PWD#$HOME}"
+                PROMPT_TAIL="${PROMPT_TAIL#/}"
+                W="${W%$PROMPT_TAIL} [. . .] ${PROMPT_TAIL:$(($W_LENGTH - $MAXIMUM_PROMPT_TAIL_LENGTH + 9))}"
+        fi
 
-        echo "$PROMPT$W"
+        echo "$PROMPT_HEAD$W"
 }
 
 case $TERM in

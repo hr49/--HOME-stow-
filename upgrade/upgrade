@@ -23,4 +23,5 @@ exit 1
 
 terminal-logger apt-get update
 terminal-logger apt-get dist-upgrade
+terminal-logger ubuntu-drivers autoinstall
 terminal-logger apt-get --purge autoremove

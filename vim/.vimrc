@@ -193,3 +193,5 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
 set statusline+=%=%{fugitive#statusline()}
+
+inoremap <C-\> <C-O>:execute 'normal ' . (78 - col('.')) . 'a '<CR>\<CR>

@@ -168,7 +168,7 @@ xnoremap <C-J> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
 
 function! s:Plug()
         call plug#begin('~/.vim/plugged')
-        Plug 'morhetz/gruvbox'
+        Plug 'ninrod/gruvbox'
         Plug 'scrooloose/nerdtree'
         Plug 'tpope/vim-fugitive'
         Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }

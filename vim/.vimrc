@@ -1,5 +1,3 @@
-set nocompatible
-
 set lazyredraw
 
 set encoding=utf-8
@@ -152,6 +150,8 @@ xnoremap k gk
 xnoremap gk k
 xnoremap j gj
 xnoremap gj j
+
+set mouse=a
 
 nnoremap <C-P> m'O// clang-format off<Esc>jo// clang-format on<Esc>''
 inoremap <C-P> <Esc>O// clang-format off<Esc>jo// clang-format on<Esc>kA

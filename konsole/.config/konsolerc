@@ -1,0 +1,17 @@
+[Desktop Entry]
+DefaultProfile=
+
+[Favorite Profiles]
+Favorites=
+
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAkYAAAFYAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded

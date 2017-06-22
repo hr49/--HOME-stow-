@@ -153,6 +153,8 @@ xnoremap gj j
 
 set mouse=a
 
+set formatoptions=croq
+
 nnoremap <C-P> m'O// clang-format off<Esc>jo// clang-format on<Esc>''
 inoremap <C-P> <Esc>O// clang-format off<Esc>jo// clang-format on<Esc>kA
 xnoremap <C-P> <Esc>'<V'>c// clang-format off<CR>clang-format on<Esc>P
@@ -162,9 +164,9 @@ xnoremap <C-N> <Esc>'<V'>c// clang-format on<CR>clang-format off<Esc>P
 
 let g:EclimCompletionMethod = 'omnifunc'
 
-nnoremap <C-J> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
-inoremap <C-J> <C-O>:pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
-xnoremap <C-J> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
+nnoremap <C-J> :pyfile /usr/share/vim/addons/syntax/clang-format.py<CR>
+inoremap <C-J> <C-O>:pyfile /usr/share/vim/addons/syntax/clang-format.py<CR>
+xnoremap <C-J> :pyfile /usr/share/vim/addons/syntax/clang-format.py<CR>
 
 function! s:Plug()
         call plug#begin('~/.vim/plugged')
@@ -173,7 +175,7 @@ function! s:Plug()
         Plug 'tpope/vim-fugitive'
         Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
         Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install' }
-        Plug 'Valloric/YouCompleteMe', { 'do': 'PATH=\"/sbin:${PATH}\" ./install.py --clang-completer' }
+        Plug 'Valloric/YouCompleteMe', { 'do': 'PATH=\"/sbin:${PATH}\" ./install.py --clang-completer --omnisharp-completer' }
         call plug#end()
 endf
 
@@ -193,5 +195,7 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
 set statusline+=%=%{fugitive#statusline()}
+
+let g:ycm_python_binary_path = '/usr/bin/python3'
 
 inoremap <C-\> <C-O>:execute 'normal ' . (78 - col('.')) . 'a '<CR>\<CR>

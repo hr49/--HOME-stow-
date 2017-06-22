@@ -1,5 +1,3 @@
-setlocal formatoptions=croq
-
 setlocal tabstop=2
 
 " ``When zero the 'ts' value will be used."

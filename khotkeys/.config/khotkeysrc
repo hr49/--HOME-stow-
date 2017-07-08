@@ -12,14 +12,14 @@ Type=ACTION_DATA_GROUP
 [Data_10]
 Comment=Comment
 Enabled=true
-Name=GVIM
+Name=VIM
 Type=SIMPLE_ACTION_DATA
 
 [Data_10Actions]
 ActionsCount=1
 
 [Data_10Actions0]
-CommandURL=konsole --profile GVIM -e vim
+CommandURL=konsole --profile VIM -e vim
 Type=COMMAND_URL
 
 [Data_10Conditions]
@@ -38,14 +38,14 @@ Uuid={00000000-0000-0000-0000-000000000011}
 [Data_11]
 Comment=Comment
 Enabled=true
-Name=GVIM1
+Name=VIM (2)
 Type=SIMPLE_ACTION_DATA
 
 [Data_11Actions]
 ActionsCount=1
 
 [Data_11Actions0]
-CommandURL=konsole --name '     ' --profile GVIM -e vim
+CommandURL=konsole --name '     ' --profile VIM -e vim
 Type=COMMAND_URL
 
 [Data_11Conditions]
@@ -64,14 +64,14 @@ Uuid={00000000-0000-0000-0000-000000000012}
 [Data_12]
 Comment=Comment
 Enabled=true
-Name=GVIM2
+Name=VIM (3)
 Type=SIMPLE_ACTION_DATA
 
 [Data_12Actions]
 ActionsCount=1
 
 [Data_12Actions0]
-CommandURL=konsole --name '      ' --profile GVIM -e vim
+CommandURL=konsole --name '      ' --profile VIM -e vim
 Type=COMMAND_URL
 
 [Data_12Conditions]
@@ -90,14 +90,14 @@ Uuid={00000000-0000-0000-0000-000000000013}
 [Data_13]
 Comment=Comment
 Enabled=true
-Name=GVIM3
+Name=VIM (4)
 Type=SIMPLE_ACTION_DATA
 
 [Data_13Actions]
 ActionsCount=1
 
 [Data_13Actions0]
-CommandURL=konsole --name '       ' --profile GVIM -e vim
+CommandURL=konsole --name '       ' --profile VIM -e vim
 Type=COMMAND_URL
 
 [Data_13Conditions]
@@ -116,14 +116,14 @@ Uuid={00000000-0000-0000-0000-000000000014}
 [Data_14]
 Comment=Comment
 Enabled=true
-Name=GVIM4
+Name=VIM (5)
 Type=SIMPLE_ACTION_DATA
 
 [Data_14Actions]
 ActionsCount=1
 
 [Data_14Actions0]
-CommandURL=konsole --name '        ' --profile GVIM -e vim
+CommandURL=konsole --name '        ' --profile VIM -e vim
 Type=COMMAND_URL
 
 [Data_14Conditions]
@@ -1115,7 +1115,7 @@ Uuid={00000000-0000-0000-0000-00000000000c}
 [Data_6]
 Comment=Comment
 Enabled=true
-Name=Konsole <2>
+Name=Konsole (2)
 Type=SIMPLE_ACTION_DATA
 
 [Data_6Actions]
@@ -1141,7 +1141,7 @@ Uuid={00000000-0000-0000-0000-00000000000d}
 [Data_7]
 Comment=Comment
 Enabled=true
-Name=Konsole <3>
+Name=Konsole (3)
 Type=SIMPLE_ACTION_DATA
 
 [Data_7Actions]
@@ -1167,7 +1167,7 @@ Uuid={00000000-0000-0000-0000-00000000000e}
 [Data_8]
 Comment=Comment
 Enabled=true
-Name=Konsole <4>
+Name=Konsole (4)
 Type=SIMPLE_ACTION_DATA
 
 [Data_8Actions]
@@ -1193,7 +1193,7 @@ Uuid={00000000-0000-0000-0000-00000000000f}
 [Data_9]
 Comment=Comment
 Enabled=true
-Name=Konsole <5>
+Name=Konsole (5)
 Type=SIMPLE_ACTION_DATA
 
 [Data_9Actions]

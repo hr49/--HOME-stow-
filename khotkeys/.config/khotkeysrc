@@ -19,7 +19,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_10Actions0]
-CommandURL=konsole --profile GVIM
+CommandURL=konsole --profile GVIM -e vim
 Type=COMMAND_URL
 
 [Data_10Conditions]
@@ -45,7 +45,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_11Actions0]
-CommandURL=konsole --name '     ' --profile GVIM
+CommandURL=konsole --name '     ' --profile GVIM -e vim
 Type=COMMAND_URL
 
 [Data_11Conditions]
@@ -71,7 +71,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_12Actions0]
-CommandURL=konsole --name '      ' --profile GVIM
+CommandURL=konsole --name '      ' --profile GVIM -e vim
 Type=COMMAND_URL
 
 [Data_12Conditions]
@@ -97,7 +97,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_13Actions0]
-CommandURL=konsole --name '       ' --profile GVIM
+CommandURL=konsole --name '       ' --profile GVIM -e vim
 Type=COMMAND_URL
 
 [Data_13Conditions]
@@ -123,7 +123,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_14Actions0]
-CommandURL=konsole --name '        ' --profile GVIM
+CommandURL=konsole --name '        ' --profile GVIM -e vim
 Type=COMMAND_URL
 
 [Data_14Conditions]

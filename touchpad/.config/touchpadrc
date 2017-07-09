@@ -1,0 +1,8 @@
+[parameters]
+AccelFactor=0.035417035222053528
+CircScrollDelta=6
+HorizScrollDelta=2.5
+HorizTwoFingerScroll=true
+MaxTapMove=3.5
+Tapping=false
+VertScrollDelta=2.1000000000000001

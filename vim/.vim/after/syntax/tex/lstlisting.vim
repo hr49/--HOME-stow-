@@ -5,4 +5,3 @@
 " NOTE: Place this file in your $HOME/.vim/after/syntax/tex/ directory (make it if it doesn't exist)
 let b:loaded_lstlisting  = "v1b"
 syn region texZone	start="\\begin{lstlisting}" end="\\end{lstlisting}\|%stopzone\>"
-syn region texZone	start="\\lstinputlisting" end="{\s*[a-zA-Z/.0-9_^]\+\s*}"

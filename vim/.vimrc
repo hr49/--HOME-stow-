@@ -155,24 +155,14 @@ set mouse=a
 
 set formatoptions=croq
 
-nnoremap <C-P> m'O// clang-format off<Esc>jo// clang-format on<Esc>''
-inoremap <C-P> <Esc>O// clang-format off<Esc>jo// clang-format on<Esc>kA
-xnoremap <C-P> <Esc>'<V'>c// clang-format off<CR>clang-format on<Esc>P
-nnoremap <C-N> m'O// clang-format on<Esc>jo// clang-format off<Esc>''
-inoremap <C-N> <Esc>O// clang-format on<Esc>jo// clang-format off<Esc>kA
-xnoremap <C-N> <Esc>'<V'>c// clang-format on<CR>clang-format off<Esc>P
-
 let g:EclimCompletionMethod = 'omnifunc'
-
-nnoremap <C-J> :pyfile /usr/share/vim/addons/syntax/clang-format.py<CR>
-inoremap <C-J> <C-O>:pyfile /usr/share/vim/addons/syntax/clang-format.py<CR>
-xnoremap <C-J> :pyfile /usr/share/vim/addons/syntax/clang-format.py<CR>
 
 function! s:Plug()
         call plug#begin('~/.vim/plugged')
         Plug 'ninrod/gruvbox'
         Plug 'scrooloose/nerdtree'
         Plug 'tpope/vim-fugitive'
+        Plug 'nvie/vim-flake8'
         Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
         Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install' }
         Plug 'Valloric/YouCompleteMe', { 'do': 'PATH=\"/sbin:${PATH}\" ./install.py --clang-completer --omnisharp-completer' }

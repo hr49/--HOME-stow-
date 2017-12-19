@@ -21,5 +21,11 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 PATH="/opt/eclipse:$PATH"
 
-export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
+INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
+PATH="/usr/local/texlive/2017/bin/x86_64-linux:$PATH"
+
+. "$HOME/github.gatech.edu/GTSR/tiva-toolchain/path.bash.inc"

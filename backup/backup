@@ -27,6 +27,6 @@ exec 3> "${1%/}/$(date +'%Y%m%dT%H%M%S%z').tar.xz"
 
 _sudo_home="$(getent passwd $SUDO_USER|cut -d: -f6)"
 if [[ -e "$_sudo_home/.backup/exclude-from" ]]
-then tar cvX "$_sudo_home/.backup/exclude-from" /etc "$_sudo_home"|xz -9 >&3
-else tar cv /etc "$_sudo_home"|xz -9 >&3
+then tar cvX "$_sudo_home/.backup/exclude-from" /etc "$_sudo_home"|xz -9T0 >&3
+else tar cv /etc "$_sudo_home"|xz -9T0 >&3
 fi

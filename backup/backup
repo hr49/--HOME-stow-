@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copyright (C) 2018 Matthew Marting
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -11,22 +13,64 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-set -eo pipefail
-unalias -a
+set -o pipefail
 
-[[ "$EUID" -eq 0 ]] && [[ -n "$SUDO_USER" ]] || {
-echo "$0: You must invoke sudo to execute this program as the superuser"
-exit 1
+source libversion.sh
+
+readonly ARCHIVE_BASENAME_VERSION_HEAD_DELIMITER='-'
+readonly ARCHIVE_PATH_DATE_FORMAT='+%Y%m%dT%H%M%S%z'
+readonly ARCHIVE_PATH_EXT='tar'"$BASENAME_DELIMITER"'xz'
+readonly ARCHIVE_PATH_EXT_REGEX='tar'"$REGEXESCAPED_BASENAME_DELIMITER"'xz'
+
+make_archive_path_date() {
+  date -- "$ARCHIVE_PATH_DATE_FORMAT"
 }
 
-# Get a lock on the backup file in case another instance of this script is run
-# within the same second. Note that "$1" may have a trailing "/".
-exec 3> "${1%/}/$(date +'%Y%m%dT%H%M%S%z').tar.xz"
+main() {
+  local -r ARCHIVE_PATH_DIRNAME="$1"
+  local -r ARCHIVE_BASENAME_VERSION_HEAD=`
+     `"$(make_archive_path_date)$ARCHIVE_BASENAME_VERSION_HEAD_DELIMITER$2"
+  local -r ARCHIVE_PATH_VERSION_HEAD="$(version::path_version_head \
+        "$ARCHIVE_PATH_DIRNAME" \
+        "$ARCHIVE_BASENAME_VERSION_HEAD")"
+  local -r ARCHIVE_PATH_BASENAME="$(version::path_basename \
+        "$ARCHIVE_BASENAME_VERSION_HEAD" \
+        "$ARCHIVE_PATH_EXT")"
+  local -r ARCHIVE_PATH=`
+     `"$(version::path "$ARCHIVE_PATH_DIRNAME" "$ARCHIVE_PATH_BASENAME")"
+  local -r ARCHIVE_PATH_VERSION_TAIL=`
+     `"$(version::path_version_tail "$ARCHIVE_PATH_EXT")"
+  local -r ARCHIVE_PATH_REGEX="$(version::path_regex \
+        "$ARCHIVE_PATH_DIRNAME" \
+        "$ARCHIVE_BASENAME_VERSION_HEAD" \
+        "$ARCHIVE_PATH_EXT_REGEX")"
 
-_sudo_home="$(getent passwd $SUDO_USER|cut -d: -f6)"
-if [[ -e "$_sudo_home/.backup/exclude-from" ]]
-then tar cvX "$_sudo_home/.backup/exclude-from" /etc "$_sudo_home"|xz -9T0 >&3
-else tar cv /etc "$_sudo_home"|xz -9T0 >&3
-fi
+  make_the_next_archive() {
+    version::make_the_next \
+      "$ARCHIVE_PATH_DIRNAME" \
+      "$ARCHIVE_PATH_VERSION_HEAD" \
+      "$ARCHIVE_PATH_BASENAME" \
+      "$ARCHIVE_PATH" \
+      "$ARCHIVE_PATH_VERSION_TAIL" \
+      "$ARCHIVE_PATH_REGEX"
+  }
+
+  local archive_path
+
+  archive_path="$(make_the_next_archive)" || return 1
+
+  readonly archive_path
+  local argv=('tar' '--create')
+
+  if [[ -n $3 ]]; then
+    argv+=('--exclude-from='"$3")
+  fi
+
+  argv+=('--verbose')
+  readonly argv
+  "${argv[@]}" -- "${@:4}" | xz -9 --threads=0 >"$archive_path"
+}
+
+main "$@"
